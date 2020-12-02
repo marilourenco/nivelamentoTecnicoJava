@@ -1,14 +1,14 @@
 package app;
 
-import dto.Viagem;
-import enums.Destinos;
+import dto.Trip;
+import enums.Whiter;
 
 public class App {
 
     public static void main(String [] args){
-        Viagem viagem = new Viagem(Destinos.ILHEUS);
-        viagem.setDestino(Destinos.NATAL);
-        System.out.println(viagem.getDestino().getCidade());
+        Trip trip = new Trip(Whiter.ILHEUS);
+        trip.setWhiter(Whiter.NATAL);
+        System.out.println(trip.getWhiter().getCity());
     }
 
 
