@@ -27,9 +27,16 @@ public class App {
 
         System.out.println("This trip is to: "+ trip.getWhiter().getCity());
         System.out.println("The number of companions is: "+ trip.getCompanion().size());
-        System.out.println("The name of the companion number 1 is " + trip.getCompanion().get(0).getName());
-        System.out.println("The name of the companion number 2 is " + trip.getCompanion().get(1).getName());
+        // simple for
+        for (int i = 0; i < trip.getCompanion().size(); i++) {
+            System.out.println("The companion name is: " + trip.getCompanion().get(i).getName() + " and the confirmation of registration is: "  + trip.getCompanion().get(i).isConfirmation());
 
+        }
+        // robust for
+        for (Companion companion3 : trip.getCompanion()) {
+            System.out.println("The companion name is: " + companion3.getName() + " and the confirmation of registration is: "  + companion3.isConfirmation());
+
+        }
     }
 
 
