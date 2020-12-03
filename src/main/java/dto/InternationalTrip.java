@@ -1,8 +1,11 @@
 package dto;
 
 import enums.Whiter;
+import util.Utils;
 
+import java.io.FileInputStream;
 import java.util.List;
+import java.util.Properties;
 
 public class InternationalTrip extends Trip{
 
@@ -20,10 +23,11 @@ public class InternationalTrip extends Trip{
     }
     @Override
     public void setCompanion(List<Companion> companion) throws Exception {
-        if (companion.size() <= 1) {
+        int companionLimit = Integer.parseInt(Utils.getPropertiesLimit("international.trip.companion.limit"));
+        if (companion.size() <= companionLimit) {
             super.setCompanion(companion);
         } else {
-            throw new Exception("International trips cannot have more than 1 companion");
+            throw new Exception("International trips cannot have more than " + companionLimit + " companion.");
         }
     }
 }
