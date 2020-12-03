@@ -24,7 +24,7 @@ public class Trip {
         return companion;
     }
 
-    public void setCompanion(List<Companion> companion) {
+    public void setCompanion(List<Companion> companion) throws Exception {
         this.companion = companion;
     }
 }
