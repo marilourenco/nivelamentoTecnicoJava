@@ -1,13 +1,12 @@
 package dto;
 
 import enums.Whiter;
+import interfaces.ForecastCalculator;
 import util.Utils;
-
-import java.io.FileInputStream;
 import java.util.List;
-import java.util.Properties;
 
-public class InternationalTrip extends Trip{
+
+public class InternationalTrip extends Trip implements ForecastCalculator {
 
     private String passport;
     public InternationalTrip(Whiter whiter) {
@@ -29,5 +28,12 @@ public class InternationalTrip extends Trip{
         } else {
             throw new Exception("International trips cannot have more than " + companionLimit + " companion.");
         }
+    }
+
+    public int calculateReturnDaysForecast() {
+        if(this.getWhiter().equals(Whiter.MIAMI)){
+            return 1;
+        }
+        return 0;
     }
 }

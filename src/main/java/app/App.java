@@ -45,7 +45,7 @@ public class App {
 
         }
 
-        NationalTrip nationalTrip = new NationalTrip(Whiter.ILHEUS);
+        NationalTrip nationalTrip = new NationalTrip(Whiter.NATAL);
 
         try {
             nationalTrip.setCompanion(companion);
@@ -69,7 +69,8 @@ public class App {
         internationalTrip.setPassport("00000012458848465");
         System.out.println(internationalTrip.getWhiter().getCity());
         System.out.println(internationalTrip.getPassport());
-
+        System.out.println(nationalTrip.calculateReturnDaysForecast());
+        System.out.println(internationalTrip.calculateReturnDaysForecast());
     }
 
 

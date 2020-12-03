@@ -1,13 +1,12 @@
 package dto;
 
 import enums.Whiter;
+import interfaces.ForecastCalculator;
 import util.Utils;
-
-import java.io.FileInputStream;
 import java.util.List;
-import java.util.Properties;
 
-public class NationalTrip extends Trip{
+
+public class NationalTrip extends Trip implements ForecastCalculator {
 
     private String cpf;
 
@@ -30,5 +29,18 @@ public class NationalTrip extends Trip{
         } else {
             throw new Exception("National trips cannot have more than: " + companionLimit + " companion.");
         }
+    }
+
+    public int calculateReturnDaysForecast() {
+        int quantityDays = 0;
+        switch (this.getWhiter()){
+            case ILHEUS: quantityDays = 4; break;
+            case NATAL: quantityDays = 3; break;
+            case OLINDA: quantityDays = 2; break;
+            case RECIFE: quantityDays = 1; break;
+            case SALVADOR: quantityDays = 0; break;
+        }
+        return quantityDays;
+
     }
 }
